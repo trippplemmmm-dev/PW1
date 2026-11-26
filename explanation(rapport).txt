@@ -1,0 +1,20 @@
+J'ai utilisé l'IA pour générer les codes mais j'ai essayé de comprendre :
+
+les deux programmes fonctionnent comme un lexer, donc ils transforment les lexemes en tokens.
+
+**Le programme regex est un programme où on utilise la bibliothèque re pour faire le travail,
+ un lexeme qui est un keyword devient keyword et un nombre qui contient un dot(point ".") devient real, sinon c'est un integer.
+ L'ordre des patterns est important, par exemple on met comment au-dessus de operator pour que // ne devienne pas une double division.
+*Sa limite est que sa façon de fonctionner est cachée, donc on ne peut pas comprendre complètement comment ça marche,
+ et on a peu de contrôle si on a besoin de modifier quelque chose.
+*Avantages : code court et lisible, rapide parce qu'on utilise la bibliothèque regex.
+
+**Pour le lexer à automate :
+on doit travailler avec des états pour atteindre les états finaux qui sont nos tokens, par exemple start => digit => int ,
+et on fait un seul dfa pour tout mais different etats finales.
+
+*Limites : code plus long, la modification peut risquer de causer une erreur parce qu'on change à la main.
+
+*Avantages : montre comment le processus se déroule et ne dépend pas des bibliothèques regex.
+
+=>Personnellement je pense que le lexer regex est meilleur parce qu'il est plus court et rapide.
